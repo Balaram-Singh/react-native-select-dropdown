@@ -41,6 +41,8 @@ const SelectDropdown = (
     statusBarTranslucent,
     dropdownStyle,
     /////////////////////////////
+    dropdownOverlayStyle,
+    /////////////////////////////
     rowStyle /* style object for row */,
     rowTextStyle /* style object for row text */,
     renderCustomizedRowChild /* function returns React component for customized row */,
@@ -120,7 +122,7 @@ const SelectDropdown = (
     dropdownOverlay: {
       width: "100%",
       height: "100%",
-      backgroundColor: "rgba(0,0,0,0.02)",
+      backgroundColor: "rgba(0,0,0,0.4)",
     },
     dropdownOverlayView: {
       backgroundColor: "#EFEFEF",
@@ -311,7 +313,7 @@ const SelectDropdown = (
         >
           <TouchableOpacity
             activeOpacity={1}
-            style={[styles.dropdownOverlay]}
+            style={[styles.dropdownOverlay,dropdownOverlayStyle]}
             onPress={() => closeDropdown()}
           />
           <View
